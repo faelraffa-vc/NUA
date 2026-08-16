@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nua Carpet Cleaning & Protection</title>
+  <link rel="icon" type="image/png" href="https://z-cdn-media.chatglm.cn/files/c994d6f8-6a10-4ca1-aff9-c6648aa83fe6.png?auth_key=1886890106-f3eb331105a64d5f901dd402690a84d1-0-6e637d4f0971286bd4985f47800b7985">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config={theme:{extend:{colors:{wine:{50:'#fdf2f3',100:'#fce4e7',200:'#f9cdd3',300:'#f3a5b0',400:'#e87285',500:'#d94866',600:'#c4294e',700:'#a31d40',800:'#8a1a3a',900:'#722F37',950:'#460d1a'},nua:'#722F37'},fontFamily:{sans:['"Plus Jakarta Sans"','system-ui','sans-serif']}}}}
+  </script>
+  <style>
+    *{font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+    html{scroll-behavior:smooth}
+    body{-webkit-font-smoothing:antialiased}
+    ::-webkit-scrollbar{width:6px}
+    ::-webkit-scrollbar-track{background:#722F37}
+    ::-webkit-scrollbar-thumb{background:#f3a5b0;border-radius:3px}
+    .reveal{opacity:0;transform:translateY(24px);transition:all .6s cubic-bezier(.22,1,.36,1)}
+    .reveal.active{opacity:1;transform:translateY(0)}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+    .slider{position:relative;overflow:hidden;cursor:ew-resize;user-select:none;border-radius:1.25rem}
+    .slider .bf{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}
+    .slider .ln{position:absolute;top:0;width:3px;height:100%;background:#fff;z-index:3;box-shadow:0 0 16px rgba(0,0,0,.4)}
+    .slider .hd{position:absolute;top:50%;transform:translate(-50%,-50%);width:44px;height:44px;background:#fff;border-radius:50%;z-index:4;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.3)}
+    .slider .lb{position:absolute;bottom:14px;padding:5px 14px;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);color:#fff;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;border-radius:6px;z-index:5}
+    .slider .lb-l{left:14px}.slider .lb-r{right:14px}
+    .mob{transform:translateX(100%);transition:transform .35s cubic-bezier(.22,1,.36,1)}.mob.open{transform:translateX(0)}
+    .sc{transition:all .3s cubic-bezier(.22,1,.36,1)}.sc:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(114,47,55,.12)}
+    .sc:hover .si{background:#722F37;color:#fff;transform:scale(1.1)}
+    @keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}.fl{animation:fl 5s ease-in-out infinite}
+    @keyframes pr{0%{box-shadow:0 0 0 0 rgba(243,165,176,.5)}100%{box-shadow:0 0 0 8px rgba(243,165,176,0)}}.pr{animation:pr 2s ease-in-out infinite}
+    .ap{transition:all .3s ease}.ap:hover{background:#722F37;color:#fff;border-color:#722F37;transform:translateY(-2px)}
+    .ng{background:linear-gradient(135deg,#722F37,#460d1a)}
+    .before-bg{background:linear-gradient(135deg,#8B7355 0%,#6B5B45 30%,#5C4A3A 60%,#4A3C2E 100%)}
+    .after-bg{background:linear-gradient(135deg,#C4A882 0%,#D4B896 30%,#E0C8A8 60%,#E8D4B8 100%)}
+    .before-sofa{background:linear-gradient(135deg,#6B5B4A 0%,#554838 50%,#4A3C2E 100%)}
+    .after-sofa{background:linear-gradient(135deg,#8B7D6B 0%,#A69882 50%,#BEB0A0 100%)}
+    .before-stair{background:linear-gradient(180deg,#5C4A3A 0%,#6B5B45 25%,#4A3C2E 50%,#6B5B45 75%,#5C4A3A 100%)}
+    .after-stair{background:linear-gradient(180deg,#C4A882 0%,#D4B896 25%,#E0C8A8 50%,#D4B896 75%,#C4A882 100%)}
+    .before-rug{background:linear-gradient(135deg,#7A5C3E 0%,#5C4030 25%,#8B6B4A 50%,#5C4030 75%,#7A5C3E 100%)}
+    .after-rug{background:linear-gradient(135deg,#B8956A 0%,#D4AD7A 25%,#C4A070 50%,#D4AD7A 75%,#B8956A 100%)}
+    .hero-overlay{background:linear-gradient(145deg,rgba(70,13,26,.9) 0%,rgba(114,47,55,.75) 50%,rgba(70,13,26,.85) 100%)}
+  </style>
+</head>
+<body class="bg-white text-neutral-800">
+
+<!-- NAV -->
+<nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-400">
+  <div class="max-w-7xl mx-auto px-6 h-[68px] flex items-center justify-between">
+    <a href="#hero" class="flex items-center h-10 w-[140px] relative">
+      <img id="lw" src="https://z-cdn-media.chatglm.cn/files/4b24c3cd-7451-4bf9-993e-252871d7f2d8.png?auth_key=1886893979-36de6b44ca6848d495cd7759deb8e263-0-75e0b361938e8851a91c52db9e44444a" alt="NUA" class="h-10 w-auto max-w-[140px] object-contain absolute left-0 top-0 transition-opacity duration-300">
+      <img id="ld" src="https://z-cdn-media.chatglm.cn/files/c994d6f8-6a10-4ca1-aff9-c6648aa83fe6.png?auth_key=1886890106-f3eb331105a64d5f901dd402690a84d1-0-6e637d4f0971286bd4985f47800b7985" alt="NUA" class="h-10 w-auto max-w-[140px] object-contain absolute left-0 top-0 opacity-0 transition-opacity duration-300">
+    </a>
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="#about" class="nl text-[13px] font-semibold text-white/75 hover:text-wine-300 transition-colors">About</a>
+      <a href="#services" class="nl text-[13px] font-semibold text-white/75 hover:text-wine-300 transition-colors">Services</a>
+      <a href="#results" class="nl text-[13px] font-semibold text-white/75 hover:text-wine-300 transition-colors">Results</a>
+      <a href="#areas" class="nl text-[13px] font-semibold text-white/75 hover:text-wine-300 transition-colors">Areas</a>
+      <a href="#reviews" class="nl text-[13px] font-semibold text-white/75 hover:text-wine-300 transition-colors">Reviews</a>
+      <a href="tel:+3530871657650" id="pbtn" class="ml-2 px-5 py-2.5 bg-white text-nua text-[13px] font-bold rounded-xl flex items-center gap-2 hover:shadow-lg transition-all">
+        <span class="iconify text-sm" data-icon="mdi:phone"></span>+353 087 165 7650
+      </a>
+    </div>
+    <button id="mt" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl text-white/75">
+      <span class="iconify text-2xl" data-icon="mdi:menu"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mm" class="mob fixed inset-0 z-[60] bg-nua/98 backdrop-blur-xl flex flex-col">
+  <div class="px-6 h-[68px] flex items-center justify-between">
+    <img src="https://z-cdn-media.chatglm.cn/files/4b24c3cd-7451-4bf9-993e-252871d7f2d8.png?auth_key=1886893979-36de6b44ca6848d495cd7759deb8e263-0-75e0b361938e8851a91c52db9e44444a" alt="NUA" class="h-9 w-auto max-w-[120px] object-contain">
+    <button id="mc" class="w-10 h-10 flex items-center justify-center text-white"><span class="iconify text-2xl" data-icon="mdi:close"></span></button>
+  </div>
+  <div class="flex-1 flex flex-col justify-center px-8 gap-5">
+    <a href="#about" class="ml text-[26px] font-extrabold text-white/85 hover:text-wine-300 transition-colors">About</a>
+    <a href="#services" class="ml text-[26px] font-extrabold text-white/85 hover:text-wine-300 transition-colors">Services</a>
+    <a href="#results" class="ml text-[26px] font-extrabold text-white/85 hover:text-wine-300 transition-colors">Results</a>
+    <a href="#areas" class="ml text-[26px] font-extrabold text-white/85 hover:text-wine-300 transition-colors">Areas</a>
+    <a href="#reviews" class="ml text-[26px] font-extrabold text-white/85 hover:text-wine-300 transition-colors">Reviews</a>
+    <div class="pt-5 space-y-3">
+      <a href="#contact" class="ml block text-center px-7 py-3.5 bg-white text-nua font-bold rounded-xl text-sm">Get a Free Quote</a>
+      <a href="tel:+3530871657650" class="ml block text-center px-7 py-3.5 bg-white/10 text-white font-bold rounded-xl text-sm border border-white/20"><span class="iconify inline-block align-middle mr-1.5" data-icon="mdi:phone"></span>+353 087 165 7650</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+  <img src="https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?w=1920&q=75" alt="Clean carpet in living room" class="absolute inset-0 w-full h-full object-cover" loading="eager">
+  <div class="hero-overlay absolute inset-0"></div>
+  <div class="absolute top-1/4 -left-40 w-[500px] h-[500px] rounded-full bg-wine-500/15 blur-[100px]"></div>
+  <div class="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-wine-400/10 blur-[100px]"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 w-full py-28">
+    <div class="max-w-2xl">
+      <span class="reveal inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white/90 text-[11px] font-bold uppercase tracking-[.14em] mb-7">
+        <span class="w-2 h-2 bg-wine-300 rounded-full pr"></span>Professional Carpet & Upholstery Cleaning
+      </span>
+      <h1 class="reveal d1 text-[46px] md:text-[66px] lg:text-[78px] font-extrabold text-white leading-[.93] tracking-tight mb-7">Fresh carpets,<br><span class="text-wine-300">happy home.</span></h1>
+      <p class="reveal d2 text-[17px] text-white/55 leading-relaxed max-w-lg mb-9">Don't let time ruin your carpets and sofas. We bring them back to life with professional deep cleaning.</p>
+      <div class="reveal d3 flex flex-wrap gap-3.5">
+        <a href="#contact" class="inline-flex items-center gap-2.5 px-7 py-3.5 bg-white text-nua font-bold text-sm rounded-xl hover:bg-wine-50 transition-all group">Get a Free Quote <span class="iconify text-base group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right"></span></a>
+        <a href="tel:+3530871657650" class="inline-flex items-center gap-2.5 px-7 py-3.5 bg-white/10 backdrop-blur-md text-white font-bold text-sm rounded-xl border border-white/15 hover:bg-white/20 transition-all"><span class="iconify text-base" data-icon="mdi:phone"></span>+353 087 165 7650</a>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/25">
+    <span class="text-[9px] uppercase tracking-[.2em] font-bold">Scroll</span>
+    <div class="w-px h-7 bg-gradient-to-b from-white/25 to-transparent animate-pulse"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="bg-nua py-10">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="reveal text-center"><div class="text-3xl md:text-4xl font-extrabold text-white mb-0.5" data-count="1500">0+</div><div class="text-[10px] uppercase tracking-[.15em] text-wine-300 font-bold">Happy Customers</div></div>
+    <div class="reveal d1 text-center"><div class="text-3xl md:text-4xl font-extrabold text-white mb-0.5" data-count="8">0</div><div class="text-[10px] uppercase tracking-[.15em] text-wine-300 font-bold">Years Experience</div></div>
+    <div class="reveal d2 text-center"><div class="text-3xl md:text-4xl font-extrabold text-white mb-0.5" data-count="5">0</div><div class="text-[10px] uppercase tracking-[.15em] text-wine-300 font-bold">Counties Covered</div></div>
+    <div class="reveal d3 text-center"><div class="text-3xl md:text-4xl font-extrabold text-white mb-0.5">100%</div><div class="text-[10px] uppercase tracking-[.15em] text-wine-300 font-bold">Satisfaction Guarantee</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-24 md:py-32 bg-white relative overflow-hidden">
+  <div class="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-wine-100 blur-[100px] opacity-60"></div>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="reveal relative flex items-center justify-center">
+        <div class="relative">
+          <img src="https://z-cdn-media.chatglm.cn/files/376a11a4-1ea3-4408-a725-075cd1ab0560.png?auth_key=1886889717-f50a6c3fdb184dd4bd5e99a97611df6e-0-68a7e20fe21630dd4469722a9d1a92c7" alt="NUA Carpet Cleaning Logo" class="w-full max-w-md mx-auto rounded-2xl shadow-2xl shadow-nua/10 fl">
+          <div class="absolute -inset-4 border-2 border-nua/10 rounded-3xl -z-10"></div>
+          <div class="absolute -inset-10 border border-nua/5 rounded-[2rem] -z-10"></div>
+        </div>
+      </div>
+      <div>
+        <span class="reveal inline-block text-[11px] font-bold uppercase tracking-[.18em] text-nua mb-4">About Nua</span>
+        <h2 class="reveal d1 text-3xl md:text-[42px] font-extrabold tracking-tight leading-[1.08] mb-6">We care about your<br>carpets as much as <span class="text-nua">you do.</span></h2>
+        <p class="reveal d2 text-neutral-500 text-[15px] leading-relaxed mb-8">Nua Carpet Cleaning & Protection is a professional cleaning company committed to delivering outstanding results for homes and businesses. We use professional-grade equipment and proven methods to restore freshness, improve hygiene, and extend the life of your furnishings.</p>
+        <div class="reveal d3 grid grid-cols-1 sm:grid-cols-2 gap-4 mb-9">
+          <div class="flex items-start gap-3"><div class="w-9 h-9 rounded-lg bg-nua/5 flex items-center justify-center flex-shrink-0 mt-0.5"><span class="iconify text-nua text-sm" data-icon="mdi:check-bold"></span></div><div><div class="font-bold text-sm mb-0.5">Pro Equipment</div><div class="text-[12px] text-neutral-400">Industry-leading machines</div></div></div>
+          <div class="flex items-start gap-3"><div class="w-9 h-9 rounded-lg bg-nua/5 flex items-center justify-center flex-shrink-0 mt-0.5"><span class="iconify text-nua text-sm" data-icon="mdi:check-bold"></span></div><div><div class="font-bold text-sm mb-0.5">Pet & Child Safe</div><div class="text-[12px] text-neutral-400">Non-toxic, eco-friendly</div></div></div>
+          <div class="flex items-start gap-3"><div class="w-9 h-9 rounded-lg bg-nua/5 flex items-center justify-center flex-shrink-0 mt-0.5"><span class="iconify text-nua text-sm" data-icon="mdi:check-bold"></span></div><div><div class="font-bold text-sm mb-0.5">Certified Team</div><div class="text-[12px] text-neutral-400">Trained & insured</div></div></div>
+          <div class="flex items-start gap-3"><div class="w-9 h-9 rounded-lg bg-nua/5 flex items-center justify-center flex-shrink-0 mt-0.5"><span class="iconify text-nua text-sm" data-icon="mdi:check-bold"></span></div><div><div class="font-bold text-sm mb-0.5">Satisfaction Promise</div><div class="text-[12px] text-neutral-400">Not happy? Re-clean free</div></div></div>
+        </div>
+        <a href="#services" class="reveal d4 inline-flex items-center gap-2 text-nua font-bold text-sm hover:gap-3.5 transition-all group">See Our Services <span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right"></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-24 md:py-32 bg-stone-50 relative overflow-hidden">
+  <div class="absolute -bottom-60 -right-60 w-[500px] h-[500px] rounded-full bg-wine-100 blur-[100px] opacity-50"></div>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-xl mx-auto mb-16">
+      <span class="reveal inline-block text-[11px] font-bold uppercase tracking-[.18em] text-nua mb-4">What We Do</span>
+      <h2 class="reveal d1 text-3xl md:text-[42px] font-extrabold tracking-tight leading-[1.08] mb-5">Say goodbye to stains <span class="text-nua">& dirt!</span></h2>
+      <p class="reveal d2 text-neutral-400 text-[15px] leading-relaxed">Discover the power of professional cleaning to keep your furnishings looking fresh and like new.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="reveal sc bg-white rounded-2xl p-7 border border-neutral-200/50"><div class="si w-12 h-12 rounded-xl bg-nua/5 text-nua flex items-center justify-center mb-5 transition-all"><span class="iconify text-xl" data-icon="mdi:carpet"></span></div><h3 class="text-[17px] font-bold tracking-tight mb-2">Carpet Cleaning</h3><p class="text-[13px] text-neutral-400 leading-relaxed mb-4">Deep cleaning that removes dirt, dust mites, stains and odours.</p><div class="flex items-center gap-1.5 text-nua text-[13px] font-bold cursor-pointer hover:gap-3 transition-all group" onclick="sc('Carpet Cleaning')">Learn more <span class="iconify text-sm group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right"></span></div></div>
+      <div class="reveal d1 sc bg-white rounded-2xl p-7 border border-neutral-200/50"><div class="si w-12 h-12 rounded-xl bg-nua/5 text-nua flex items-center justify-center mb-5 transition-all"><span class="iconify text-xl" data-icon="mdi:stairs"></span></div><h3 class="text-[17px] font-bold tracking-tight mb-2">Stair Carpets</h3><p class="text-[13px] text-neutral-400 leading-relaxed mb-4">Specialised treatment for high-traffic, worn stair areas.</p><div class="flex items-center gap-1.5 text-nua text-[13px] font-bold cursor-pointer hover:gap-3 transition-all group" onclick="sc('Stair Carpets')">Learn more <span class="iconify text-sm group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right"></span></div></div>
+      <div class="reveal d2 sc bg-white rounded-2xl p-7 border border-neutral-200/50"><div class="si w-12 h-12 rounded-xl bg-nua/5 text-nua flex items-center justify-center mb-5 transition-all"><span class="iconify text-xl" data-icon="mdi:rug"></span></div><h3 class="text-[17px] font-bold tracking-tight mb-2">Area Rugs</h3><p class="text-[13px] text-neutral-400 leading-relaxed mb-4">Gentle cleaning for oriental, Persian, modern and all rug types.</p><div class="flex items-center gap-1.5 text-nua text-[13px] font-bold cursor-pointer hover:gap-3 transition-all group" onclick="sc('Area Rugs')">Learn more <span class="iconify text-sm group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right"></span></div></div>
+      <div class="reveal sc bg-white rounded-2xl p-7 border border-neutral-200/50"><div class="si w-12 h-12 rounded-xl bg-nua/5 text-nua flex items-center justify-center mb-5 transition-all"><span class="iconify text-xl" data-icon="mdi:sofa"></span></div><h3 class="text-[17px] font-bold tracking-tight mb-2">Sofas</h3><p class="text-[13px] text-neutral-400 leading-relaxed mb-4">Deep cleaning for all fabrics, removing stains, allergens and odours.</p><div class="flex items-center gap-1.5 text-nua text-[13px] font-bold cursor-pointer hover:gap-3 transition-all group" onclick="sc('Sofas')">Learn more <span class="iconify text-sm group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right"></span></div></div>
+      <div class="reveal d1 sc bg-white rounded-2xl p-7 border border-neutral-200/50"><div class="si w-12 h-12 rounded-xl bg-nua/5 text-nua flex items-center justify-center mb-5 transition-all"><span class="iconify text-xl" data-icon="mdi:seat-outline"></span></div><h3 class="text-[17px] font-bold tracking-tight mb-2">Upholstered Chairs</h3><p class="text-[13px] text-neutral-400 leading-relaxed mb-4">Armchairs, dining chairs — each piece gets the care it deserves.</p><div class="flex items-center gap-1.5 text-nua text-[13px] font-bold cursor-pointer hover:gap-3 transition-all group" onclick="sc('Upholstered Chairs')">Learn more <span class="iconify text-sm group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right"></span></div></div>
+      <div class="reveal d2 sc bg-white rounded-2xl p-7 border border-neutral-200/50"><div class="si w-12 h-12 rounded-xl bg-nua/5 text-nua flex items-center justify-center mb-5 transition-all"><span class="iconify text-xl" data-icon="mdi:bed-outline"></span></div><h3 class="text-[17px] font-bold tracking-tight mb-2">Mattresses & Headboards</h3><p class="text-[13px] text-neutral-400 leading-relaxed mb-4">Eliminates dust mites, bacteria and stains for healthier sleep.</p><div class="flex items-center gap-1.5 text-nua text-[13px] font-bold cursor-pointer hover:gap-3 transition-all group" onclick="sc('Mattresses & Headboards')">Learn more <span class="iconify text-sm group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right"></span></div></div>
+      <div class="reveal sc bg-white rounded-2xl p-7 border border-neutral-200/50"><div class="si w-12 h-12 rounded-xl bg-nua/5 text-nua flex items-center justify-center mb-5 transition-all"><span class="iconify text-xl" data-icon="mdi:shield-check-outline"></span></div><h3 class="text-[17px] font-bold tracking-tight mb-2">Carpet Protection</h3><p class="text-[13px] text-neutral-400 leading-relaxed mb-4">Invisible shield against future stains and spills.</p><div class="flex items-center gap-1.5 text-nua text-[13px] font-bold cursor-pointer hover:gap-3 transition-all group" onclick="sc('Carpet Protection')">Learn more <span class="iconify text-sm group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right"></span></div></div>
+      <div class="reveal d1 sc bg-white rounded-2xl p-7 border border-neutral-200/50"><div class="si w-12 h-12 rounded-xl bg-nua/5 text-nua flex items-center justify-center mb-5 transition-all"><span class="iconify text-xl" data-icon="mdi:office-building-outline"></span></div><h3 class="text-[17px] font-bold tracking-tight mb-2">Commercial Cleaning</h3><p class="text-[13px] text-neutral-400 leading-relaxed mb-4">Offices, hotels, restaurants — flexible scheduling.</p><div class="flex items-center gap-1.5 text-nua text-[13px] font-bold cursor-pointer hover:gap-3 transition-all group" onclick="sc('Commercial Cleaning')">Learn more <span class="iconify text-sm group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right"></span></div></div>
+      <div class="reveal d2 sc bg-white rounded-2xl p-7 border border-neutral-200/50"><div class="si w-12 h-12 rounded-xl bg-nua/5 text-nua flex items-center justify-center mb-5 transition-all"><span class="iconify text-xl" data-icon="mdi:water-alert-outline"></span></div><h3 class="text-[17px] font-bold tracking-tight mb-2">Stain Removal</h3><p class="text-[13px] text-neutral-400 leading-relaxed mb-4">Tough stains — wine, coffee, ink, grease, pet accidents.</p><div class="flex items-center gap-1.5 text-nua text-[13px] font-bold cursor-pointer hover:gap-3 transition-all group" onclick="sc('Stain Removal')">Learn more <span class="iconify text-sm group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right"></span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="py-24 md:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-xl mx-auto mb-16">
+      <span class="reveal inline-block text-[11px] font-bold uppercase tracking-[.18em] text-nua mb-4">How It Works</span>
+      <h2 class="reveal d1 text-3xl md:text-[42px] font-extrabold tracking-tight leading-[1.08]">Simple as <span class="text-nua">1, 2, 3, 4</span></h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="reveal text-center relative"><div class="w-14 h-14 rounded-2xl ng text-white flex items-center justify-center mx-auto mb-5 text-xl font-extrabold hover:scale-110 transition-transform">1</div><h3 class="font-bold text-[15px] mb-1.5">Get in Touch</h3><p class="text-[13px] text-neutral-400 leading-relaxed">Call, message or fill in our form.</p><div class="hidden lg:block absolute top-7 left-[60%] w-[80%] border-t-2 border-dashed border-nua/15"></div></div>
+      <div class="reveal d1 text-center relative"><div class="w-14 h-14 rounded-2xl ng text-white flex items-center justify-center mx-auto mb-5 text-xl font-extrabold hover:scale-110 transition-transform">2</div><h3 class="font-bold text-[15px] mb-1.5">Free Quote</h3><p class="text-[13px] text-neutral-400 leading-relaxed">Transparent, no-obligation quote.</p><div class="hidden lg:block absolute top-7 left-[60%] w-[80%] border-t-2 border-dashed border-nua/15"></div></div>
+      <div class="reveal d2 text-center relative"><div class="w-14 h-14 rounded-2xl ng text-white flex items-center justify-center mx-auto mb-5 text-xl font-extrabold hover:scale-110 transition-transform">3</div><h3 class="font-bold text-[15px] mb-1.5">We Clean</h3><p class="text-[13px] text-neutral-400 leading-relaxed">On time, with pro equipment.</p><div class="hidden lg:block absolute top-7 left-[60%] w-[80%] border-t-2 border-dashed border-nua/15"></div></div>
+      <div class="reveal d3 text-center"><div class="w-14 h-14 rounded-2xl ng text-white flex items-center justify-center mx-auto mb-5 text-xl font-extrabold hover:scale-110 transition-transform">4</div><h3 class="font-bold text-[15px] mb-1.5">Enjoy!</h3><p class="text-[13px] text-neutral-400 leading-relaxed">Fresh, clean, great-smelling home.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE & AFTER -->
+<section id="results" class="py-24 md:py-32 bg-nua relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-wine-400 blur-[100px] opacity-[.06]"></div>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-xl mx-auto mb-16">
+      <span class="reveal inline-block text-[11px] font-bold uppercase tracking-[.18em] text-wine-300 mb-4">Real Results</span>
+      <h2 class="reveal d1 text-3xl md:text-[42px] font-extrabold tracking-tight leading-[1.08] text-white mb-5">Before & <span class="text-wine-300">After</span></h2>
+      <p class="reveal d2 text-white/45 text-[15px] leading-relaxed">Drag the slider to see the difference.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+      <div class="reveal"><div class="slider h-[300px] md:h-[380px]" data-slider><div class="bf before-bg"></div><div class="after-bg" style="width:100%;height:100%"></div><div class="ln" style="left:50%"></div><div class="hd" style="left:50%"><span class="iconify text-nua text-lg" data-icon="mdi:arrow-left-right"></span></div><div class="lb lb-l">Before</div><div class="lb lb-r">After</div></div><p class="text-center text-white/35 text-[13px] mt-4 font-bold">Living Room Carpet</p></div>
+      <div class="reveal d1"><div class="slider h-[300px] md:h-[380px]" data-slider><div class="bf before-sofa"></div><div class="after-sofa" style="width:100%;height:100%"></div><div class="ln" style="left:50%"></div><div class="hd" style="left:50%"><span class="iconify text-nua text-lg" data-icon="mdi:arrow-left-right"></span></div><div class="lb lb-l">Before</div><div class="lb lb-r">After</div></div><p class="text-center text-white/35 text-[13px] mt-4 font-bold">Fabric Sofa</p></div>
+      <div class="reveal"><div class="slider h-[300px] md:h-[380px]" data-slider><div class="bf before-stair"></div><div class="after-stair" style="width:100%;height:100%"></div><div class="ln" style="left:50%"></div><div class="hd" style="left:50%"><span class="iconify text-nua text-lg" data-icon="mdi:arrow-left-right"></span></div><div class="lb lb-l">Before</div><div class="lb lb-r">After</div></div><p class="text-center text-white/35 text-[13px] mt-4 font-bold">Staircase Carpet</p></div>
+      <div class="reveal d1"><div class="slider h-[300px] md:h-[380px]" data-slider><div class="bf before-rug"></div><div class="after-rug" style="width:100%;height:100%"></div><div class="ln" style="left:50%"></div><div class="hd" style="left:50%"><span class="iconify text-nua text-lg" data-icon="mdi:arrow-left-right"></span></div><div class="lb lb-l">Before</div><div class="lb lb-r">After</div></div><p class="text-center text-white/35 text-[13px] mt-4 font-bold">Area Rug</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section id="areas" class="py-24 md:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <span class="reveal inline-block text-[11px] font-bold uppercase tracking-[.18em] text-nua mb-4">Areas We Serve</span>
+        <h2 class="reveal d1 text-3xl md:text-[42px] font-extrabold tracking-tight leading-[1.08] mb-6">Covering the <span class="text-nua">Mid-West</span> of Ireland</h2>
+        <p class="reveal d2 text-neutral-400 text-[15px] leading-relaxed mb-9">We proudly serve Clare, Limerick, Galway, Tipperary and Kerry.</p>
+        <div class="reveal d3 flex flex-wrap gap-2.5">
+          <span class="ap px-5 py-2.5 rounded-full border-2 border-nua text-nua font-bold text-sm cursor-default inline-flex items-center gap-2"><span class="iconify" data-icon="mdi:map-marker"></span>Clare</span>
+          <span class="ap px-5 py-2.5 rounded-full border-2 border-nua text-nua font-bold text-sm cursor-default inline-flex items-center gap-2"><span class="iconify" data-icon="mdi:map-marker"></span>Limerick</span>
+          <span class="ap px-5 py-2.5 rounded-full border-2 border-nua text-nua font-bold text-sm cursor-default inline-flex items-center gap-2"><span class="iconify" data-icon="mdi:map-marker"></span>Galway</span>
+          <span class="ap px-5 py-2.5 rounded-full border-2 border-nua text-nua font-bold text-sm cursor-default inline-flex items-center gap-2"><span class="iconify" data-icon="mdi:map-marker"></span>Tipperary</span>
+          <span class="ap px-5 py-2.5 rounded-full border-2 border-nua text-nua font-bold text-sm cursor-default inline-flex items-center gap-2"><span class="iconify" data-icon="mdi:map-marker"></span>Kerry</span>
+        </div>
+        <div class="reveal d4 mt-9 flex items-center gap-4 p-5 bg-nua/5 rounded-xl border border-nua/10">
+          <div class="w-11 h-11 ng rounded-xl flex items-center justify-center flex-shrink-0"><span class="iconify text-white text-lg" data-icon="mdi:truck-delivery-outline"></span></div>
+          <div><div class="font-bold text-sm mb-0.5">Free Call-Out</div><div class="text-[12px] text-neutral-400">No extra travel charges in our coverage areas.</div></div>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <div class="rounded-2xl overflow-hidden shadow-2xl shadow-nua/10 h-[400px] md:h-[500px] relative bg-gradient-to-br from-wine-100 via-wine-50 to-white">
+          <div class="absolute inset-0 bg-gradient-to-t from-nua/50 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6"><div class="bg-white/95 backdrop-blur-md rounded-xl p-5 shadow-lg"><div class="flex items-center gap-3 mb-2"><span class="iconify text-nua text-xl" data-icon="mdi:home-city-outline"></span><span class="font-bold text-sm">Residential & Commercial</span></div><p class="text-[12px] text-neutral-400">From single rooms to entire buildings — no job too big or small.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="py-24 md:py-32 bg-stone-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-xl mx-auto mb-16">
+      <span class="reveal inline-block text-[11px] font-bold uppercase tracking-[.18em] text-nua mb-4">Reviews</span>
+      <h2 class="reveal d1 text-3xl md:text-[42px] font-extrabold tracking-tight leading-[1.08]">Loved by <span class="text-nua">our customers</span></h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="reveal bg-white rounded-2xl p-7 border border-neutral-200/50 shadow-sm hover:shadow-xl transition-all"><div class="flex gap-0.5 mb-5"><span class="iconify text-amber-400 text-lg" data-icon="mdi:star"></span><span class="iconify text-amber-400 text-lg" data-icon="mdi:star"></span><span class="iconify text-amber-400 text-lg" data-icon="mdi:star"></span><span class="iconify text-amber-400 text-lg" data-icon="mdi:star"></span><span class="iconify text-amber-400 text-lg" data-icon="mdi:star"></span></div><p class="text-neutral-500 text-[14px] leading-relaxed mb-6">"Our carpet was in terrible shape with years of stains. The Nua team worked absolute miracles! It looks brand new."</p><div class="flex items-center gap-3 pt-5 border-t border-neutral-100"><div class="w-10 h-10 rounded-full bg-nua/10 flex items-center justify-center text-nua font-bold text-[13px]">MC</div><div><div class="font-bold text-sm">Maria Costa</div><div class="text-[11px] text-neutral-400">Limerick</div></div></div></div>
+      <div class="reveal d1 bg-white rounded-2xl p-7 border border-neutral-200/50 shadow-sm hover:shadow-xl transition-all"><div class="flex gap-0.5 mb-5"><span class="iconify text-amber-400 text-lg" data-icon="mdi:star"></span><span class="iconify text-amber-400 text-lg" data-icon="mdi:star"></span><span class="iconify text-amber-400 text-lg" data-icon="mdi:star"></span><span class="iconify text-amber-400 text-lg" data-icon="mdi:star"></span><span class="iconify text-amber-400 text-lg" data-icon="mdi:star"></span></div><p class="text-neutral-500 text-[14px] leading-relaxed mb-6">"Had our office sofas cleaned — fantastic result. Efficient, clean and respectful team. Already booked again!"</p><div class="flex items-center gap-3 pt-5 border-t border-neutral-100"><div class="w-10 h-10 rounded-full bg-nua/10 flex items-center justify-center text-nua font-bold text-[13px]">PO</div><div><div class="font-bold text-sm">Paul O'Brien</div><div class="text-[11px] text-neutral-400">Galway</div></div></div></div>
+      <div class="reveal d2 bg-white rounded-2xl p-7 border border-neutral-200/50 shadow-sm hover:shadow-xl transition-all"><div class="flex gap-0.5 mb-5"><span class="iconify text-amber-400 text-lg" data-icon="mdi:star"></span><span class="iconify text-amber-400 text-lg" data-icon="mdi:star"></span><span class="iconify text-amber-400 text-lg" data-icon="mdi:star"></span><span class="iconify text-amber-400 text-lg" data-icon="mdi:star"></span><span class="iconify text-amber-400 text-lg" data-icon="mdi:star-half-full"></span></div><p class="text-neutral-500 text-[14px] leading-relaxed mb-6">"Booked for stairs and living room rug. The before and after is unreal! Everything smells so fresh."</p><div class="flex items-center gap-3 pt-5 border-t border-neutral-100"><div class="w-10 h-10 rounded-full bg-nua/10 flex items-center justify-center text-nua font-bold text-[13px]">SF</div><div><div class="font-bold text-sm">Siobhán Foley</div><div class="text-[11px] text-neutral-400">Clare</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 md:py-32 ng relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[.05]"><div class="absolute top-0 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div></div>
+  <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+    <div class="reveal mb-8"><img src="https://z-cdn-media.chatglm.cn/files/4b24c3cd-7451-4bf9-993e-252871d7f2d8.png?auth_key=1886893979-36de6b44ca6848d495cd7759deb8e263-0-75e0b361938e8851a91c52db9e44444a" alt="NUA" class="h-14 w-auto max-w-[200px] mx-auto object-contain"></div>
+    <h2 class="reveal d1 text-3xl md:text-[46px] font-extrabold tracking-tight leading-[1.08] text-white mb-5">Make the right choice.<br>Get in touch <span class="text-wine-300">today!</span></h2>
+    <p class="reveal d2 text-white/45 text-[15px] leading-relaxed max-w-xl mx-auto mb-4">Your sofa deserves the best care. Book our services today!</p>
+    <p class="reveal d2 text-white text-2xl md:text-3xl font-extrabold mb-9 tracking-wide"><span class="iconify inline-block align-middle mr-2 text-wine-300" data-icon="mdi:phone"></span>+353 087 165 7650</p>
+    <div class="reveal d3 flex flex-wrap justify-center gap-3.5">
+      <a href="#contact" class="inline-flex items-center gap-2.5 px-7 py-3.5 bg-white text-nua font-bold text-sm rounded-xl hover:bg-wine-50 transition-all group">Get Your Free Quote <span class="iconify text-base group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right"></span></a>
+      <a href="https://api.whatsapp.com/send/?phone=35300871657650&text&type=phone_number&app_absent=0" target="_blank" class="inline-flex items-center gap-2.5 px-7 py-3.5 bg-white/10 text-white font-bold text-sm rounded-xl border border-white/15 hover:bg-white/20 transition-all"><span class="iconify text-base" data-icon="mdi:whatsapp"></span>WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 md:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div>
+        <span class="reveal inline-block text-[11px] font-bold uppercase tracking-[.18em] text-nua mb-4">Get in Touch</span>
+        <h2 class="reveal d1 text-3xl md:text-[42px] font-extrabold tracking-tight leading-[1.08] mb-5">Let's get your <span class="text-nua">carpets sorted</span></h2>
+        <p class="reveal d2 text-neutral-400 text-[15px] leading-relaxed mb-9">Fill in the form, call us, or drop a WhatsApp.</p>
+        <div class="space-y-5">
+          <div class="reveal d2 flex items-start gap-4"><div class="w-11 h-11 rounded-xl bg-nua/5 flex items-center justify-center flex-shrink-0"><span class="iconify text-nua text-lg" data-icon="mdi:phone"></span></div><div><div class="font-bold text-sm mb-0.5">Phone</div><a href="tel:+3530871657650" class="text-neutral-500 text-[14px] hover:text-nua transition-colors font-semibold">+353 087 165 7650</a></div></div>
+          <div class="reveal d3 flex items-start gap-4"><div class="w-11 h-11 rounded-xl bg-nua/5 flex items-center justify-center flex-shrink-0"><span class="iconify text-nua text-lg" data-icon="mdi:email-outline"></span></div><div><div class="font-bold text-sm mb-0.5">Email</div><a href="mailto:cleaning.nua@gmail.com" class="text-neutral-500 text-[14px] hover:text-nua transition-colors">cleaning.nua@gmail.com</a></div></div>
+          <div class="reveal d4 flex items-start gap-4"><div class="w-11 h-11 rounded-xl bg-nua/5 flex items-center justify-center flex-shrink-0"><span class="iconify text-nua text-lg" data-icon="mdi:whatsapp"></span></div><div><div class="font-bold text-sm mb-0.5">WhatsApp</div><a href="https://api.whatsapp.com/send/?phone=35300871657650&text&type=phone_number&app_absent=0" target="_blank" class="text-neutral-500 text-[14px] hover:text-nua transition-colors">Send a message</a></div></div>
+          <div class="reveal d4 flex items-start gap-4"><div class="w-11 h-11 rounded-xl bg-nua/5 flex items-center justify-center flex-shrink-0"><span class="iconify text-nua text-lg" data-icon="mdi:clock-outline"></span></div><div><div class="font-bold text-sm mb-0.5">Hours</div><div class="text-neutral-500 text-[14px]">Mon – Sat: 8:00 – 19:00</div><div class="text-neutral-300 text-[12px]">Sunday: Closed</div></div></div>
+        </div>
+        <div class="reveal d4 mt-9 flex gap-2.5">
+          <a href="#" class="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center text-neutral-400 hover:bg-nua hover:text-white transition-all"><span class="iconify text-lg" data-icon="mdi:facebook"></span></a>
+          <a href="#" class="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center text-neutral-400 hover:bg-nua hover:text-white transition-all"><span class="iconify text-lg" data-icon="mdi:instagram"></span></a>
+          <a href="#" class="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center text-neutral-400 hover:bg-nua hover:text-white transition-all"><span class="iconify text-lg" data-icon="mdi:google"></span></a>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <form id="cf" class="bg-stone-50 rounded-2xl p-7 md:p-9 border border-neutral-200/50">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <div><label class="block text-[10px] font-bold uppercase tracking-wider text-neutral-400 mb-1.5">Name *</label><input type="text" required class="w-full px-4 py-3 rounded-xl bg-white border border-neutral-200 text-sm focus:outline-none focus:ring-2 focus:ring-nua/15 focus:border-nua transition-all placeholder:text-neutral-300" placeholder="Your name"></div>
+            <div><label class="block text-[10px] font-bold uppercase tracking-wider text-neutral-400 mb-1.5">Phone *</label><input type="tel" required class="w-full px-4 py-3 rounded-xl bg-white border border-neutral-200 text-sm focus:outline-none focus:ring-2 focus:ring-nua/15 focus:border-nua transition-all placeholder:text-neutral-300" placeholder="+353..."></div>
+          </div>
+          <div class="mb-4"><label class="block text-[10px] font-bold uppercase tracking-wider text-neutral-400 mb-1.5">Email</label><input type="email" class="w-full px-4 py-3 rounded-xl bg-white border border-neutral-200 text-sm focus:outline-none focus:ring-2 focus:ring-nua/15 focus:border-nua transition-all placeholder:text-neutral-300" placeholder="your@email.com"></div>
+          <div class="mb-4"><label class="block text-[10px] font-bold uppercase tracking-wider text-neutral-400 mb-1.5">Location</label><select class="w-full px-4 py-3 rounded-xl bg-white border border-neutral-200 text-sm focus:outline-none focus:ring-2 focus:ring-nua/15 focus:border-nua transition-all text-neutral-400"><option value="">Select county</option><option>Clare</option><option>Limerick</option><option>Galway</option><option>Tipperary</option><option>Kerry</option></select></div>
+          <div class="mb-4"><label class="block text-[10px] font-bold uppercase tracking-wider text-neutral-400 mb-1.5">Service</label><select id="ss" class="w-full px-4 py-3 rounded-xl bg-white border border-neutral-200 text-sm focus:outline-none focus:ring-2 focus:ring-nua/15 focus:border-nua transition-all text-neutral-400"><option value="">Select service</option><option>Carpet Cleaning</option><option>Stair Carpets</option><option>Area Rugs</option><option>Sofas</option><option>Upholstered Chairs</option><option>Mattresses & Headboards</option><option>Carpet Protection</option><option>Commercial Cleaning</option><option>Stain Removal</option></select></div>
+          <div class="mb-6"><label class="block text-[10px] font-bold uppercase tracking-wider text-neutral-400 mb-1.5">Message</label><textarea rows="3" class="w-full px-4 py-3 rounded-xl bg-white border border-neutral-200 text-sm focus:outline-none focus:ring-2 focus:ring-nua/15 focus:border-nua transition-all resize-none placeholder:text-neutral-300" placeholder="Tell us what you need..."></textarea></div>
+          <button type="submit" class="w-full px-7 py-3.5 bg-nua text-white font-bold text-sm rounded-xl hover:bg-wine-800 transition-all hover:shadow-lg flex items-center justify-center gap-2 group">Send Quote Request <span class="iconify text-base group-hover:translate-x-0.5 transition-transform" data-icon="mdi:send"></span></button>
+          <div id="fs" class="hidden mt-4 p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm text-center font-medium"><span class="iconify inline-block align-middle mr-1 text-lg" data-icon="mdi:check-circle"></span>Thank you! We'll get back to you shortly.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-nua pt-16 pb-7">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+      <div>
+        <img src="https://z-cdn-media.chatglm.cn/files/4b24c3cd-7451-4bf9-993e-252871d7f2d8.png?auth_key=1886893979-36de6b44ca6848d495cd7759deb8e263-0-75e0b361938e8851a91c52db9e44444a" alt="NUA" class="h-11 w-auto max-w-[140px] object-contain mb-5">
+        <p class="text-[13px] text-white/35 leading-relaxed mb-5">Professional carpet & upholstery cleaning across Ireland's Mid-West.</p>
+        <div class="flex gap-2">
+          <a href="#" class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white/40 hover:bg-white/20 hover:text-white transition-all"><span class="iconify text-sm" data-icon="mdi:facebook"></span></a>
+          <a href="#" class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white/40 hover:bg-white/20 hover:text-white transition-all"><span class="iconify text-sm" data-icon="mdi:instagram"></span></a>
+          <a href="#" class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white/40 hover:bg-white/20 hover:text-white transition-all"><span class="iconify text-sm" data-icon="mdi:google"></span></a>
+        </div>
+      </div>
+      <div><h4 class="text-[10px] font-bold uppercase tracking-[.18em] text-white/25 mb-5">Services</h4><ul class="space-y-2.5"><li><a href="#services" class="text-[13px] text-white/45 hover:text-white transition-colors">Carpet Cleaning</a></li><li><a href="#services" class="text-[13px] text-white/45 hover:text-white transition-colors">Stair Carpets</a></li><li><a href="#services" class="text-[13px] text-white/45 hover:text-white transition-colors">Area Rugs</a></li><li><a href="#services" class="text-[13px] text-white/45 hover:text-white transition-colors">Sofas</a></li><li><a href="#services" class="text-[13px] text-white/45 hover:text-white transition-colors">Mattresses</a></li><li><a href="#services" class="text-[13px] text-white/45 hover:text-white transition-colors">Protection</a></li></ul></div>
+      <div><h4 class="text-[10px] font-bold uppercase tracking-[.18em] text-white/25 mb-5">Coverage</h4><ul class="space-y-2.5"><li class="text-[13px] text-white/45">Clare</li><li class="text-[13px] text-white/45">Limerick</li><li class="text-[13px] text-white/45">Galway</li><li class="text-[13px] text-white/45">Tipperary</li><li class="text-[13px] text-white/45">Kerry</li></ul></div>
+      <div><h4 class="text-[10px] font-bold uppercase tracking-[.18em] text-white/25 mb-5">Contact</h4><ul class="space-y-2.5"><li><a href="tel:+3530871657650" class="text-[13px] text-white/45 hover:text-white transition-colors">+353 087 165 7650</a></li><li><a href="mailto:cleaning.nua@gmail.com" class="text-[13px] text-white/45 hover:text-white transition-colors">cleaning.nua@gmail.com</a></li><li><a href="#about" class="text-[13px] text-white/45 hover:text-white transition-colors">About Us</a></li><li><a href="#contact" class="text-[13px] text-white/45 hover:text-white transition-colors">Get a Quote</a></li></ul></div>
+    </div>
+    <div class="pt-7 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-[11px] text-white/20">&copy; 2025 Nua Carpet Cleaning & Protection. All rights reserved.</p>
+      <div class="flex gap-5"><a href="#" class="text-[11px] text-white/20 hover:text-white/40 transition-colors">Privacy</a><a href="#" class="text-[11px] text-white/20 hover:text-white/40 transition-colors">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://api.whatsapp.com/send/?phone=35300871657650&text&type=phone_number&app_absent=0" target="_blank" class="fixed bottom-5 right-5 z-50 w-14 h-14 bg-[#25D366] rounded-2xl flex items-center justify-center text-white shadow-lg shadow-green-600/25 hover:bg-[#20bd5a] hover:scale-105 transition-all group"><span class="iconify text-[26px]" data-icon="mdi:whatsapp"></span><span class="absolute right-full mr-3 px-3 py-1.5 bg-white text-neutral-800 text-[11px] font-semibold rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Chat with us</span></a>
+
+<!-- BACK TO TOP -->
+<button id="bt" class="fixed bottom-5 left-5 z-50 w-10 h-10 bg-nua rounded-xl flex items-center justify-center text-white shadow-lg opacity-0 translate-y-3 pointer-events-none transition-all hover:bg-wine-800"><span class="iconify text-base" data-icon="mdi:chevron-up"></span></button>
+
+<script>
+const nav=document.getElementById('nav'),lw=document.getElementById('lw'),ld=document.getElementById('ld'),nl=document.querySelectorAll('.nl');
+function un(){if(scrollY>60){nav.classList.add('bg-white/90','backdrop-blur-xl','shadow-sm');lw.style.opacity='0';ld.style.opacity='1';nl.forEach(l=>{l.classList.add('text-neutral-500');l.classList.remove('text-white/75')});const b=document.getElementById('pbtn');if(b){b.classList.remove('bg-white','text-nua');b.classList.add('bg-nua','text-white')}}else{nav.classList.remove('bg-white/90','backdrop-blur-xl','shadow-sm');lw.style.opacity='1';ld.style.opacity='0';nl.forEach(l=>{l.classList.remove('text-neutral-500');l.classList.add('text-white/75')});const b=document.getElementById('pbtn');if(b){b.classList.add('bg-white','text-nua');b.classList.remove('bg-nua','text-white')}}}
+un();addEventListener('scroll',un);
+document.getElementById('mt').onclick=()=>document.getElementById('mm').classList.add('open');
+document.getElementById('mc').onclick=()=>document.getElementById('mm').classList.remove('open');
+document.querySelectorAll('.ml').forEach(l=>l.onclick=()=>document.getElementById('mm').classList.remove('open'));
+const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('active')})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(e=>ro.observe(e));
+document.querySelectorAll('[data-slider]').forEach(s=>{const ln=s.querySelector('.ln'),hd=s.querySelector('.hd');let d=false;function u(x){const r=s.getBoundingClientRect();let p=Math.max(2,Math.min(98,((x-r.left)/r.width)*100));ln.style.left=p+'%';hd.style.left=p+'%';s.querySelector('.bf').style.clipPath='inset(0 '+(100-p)+'% 0 0)'}u(s.getBoundingClientRect().left+s.getBoundingClientRect().width*.5);s.onmousedown=e=>{d=true;u(e.clientX);e.preventDefault()};s.ontouchstart=e=>{d=true;u(e.touches[0].clientX)};addEventListener('mousemove',e=>{if(d)u(e.clientX)});addEventListener('touchmove',e=>{if(d)u(e.touches[0].clientX)});addEventListener('mouseup',()=>d=false);addEventListener('touchend',()=>d=false)});
+const co=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){const t=+x.target.dataset.count,s=x.target.textContent.includes('+')?'+':'';let c=0;const i=t/50,tm=setInterval(()=>{c+=i;if(c>=t){c=t;clearInterval(tm)}x.target.textContent=Math.floor(c).toLocaleString()+s},30);co.unobserve(x.target)}})},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(c=>co.observe(c));
+const bt=document.getElementById('bt');addEventListener('scroll',()=>{if(scrollY>500){bt.classList.remove('opacity-0','translate-y-3','pointer-events-none');bt.classList.add('opacity-100','translate-y-0','pointer-events-auto')}else{bt.classList.add('opacity-0','translate-y-3','pointer-events-none');bt.classList.remove('opacity-100','translate-y-0','pointer-events-auto')}});bt.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+function sc(n){const s=document.getElementById('ss');for(let i=0;i<s.options.length;i++)if(s.options[i].text===n){s.selectedIndex=i;break}document.getElementById('contact').scrollIntoView({behavior:'smooth'})}
+document.getElementById('cf').onsubmit=function(e){e.preventDefault();document.getElementById('fs').classList.remove('hidden');this.reset();setTimeout(()=>document.getElementById('fs').classList.add('hidden'),5000)};
+const secs=document.querySelectorAll('section[id]');addEventListener('scroll',()=>{let c='';secs.forEach(s=>{if(scrollY>=s.offsetTop-120)c=s.id});document.querySelectorAll('nav a[href^="#"]').forEach(l=>{l.classList.remove('!text-wine-300');if(l.getAttribute('href')==='#'+c)l.classList.add('!text-wine-300')})});
+</script>
+</body>
+</html>
