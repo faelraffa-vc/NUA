@@ -21,7 +21,7 @@
     .reveal{opacity:0;transform:translateY(24px);transition:all .6s cubic-bezier(.22,1,.36,1)}
     .reveal.active{opacity:1;transform:translateY(0)}
     .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
-    .slider{position:relative;overflow:hidden;cursor:ew-resize;user-select:none;border-radius:1.25rem}
+    .slider{position:relative;overflow:hidden;cursor:ew-resize;user-select:none;border-radius:1.25rem;box-shadow:0 8px 30px rgba(0,0,0,.12)}
     .slider .bf{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}
     .slider .bf img,.slider .af{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
     .slider .af{z-index:0}
@@ -36,6 +36,7 @@
     @keyframes pr{0%{box-shadow:0 0 0 0 rgba(243,165,176,.5)}100%{box-shadow:0 0 0 8px rgba(243,165,176,0)}}.pr{animation:pr 2s ease-in-out infinite}
     .ap{transition:all .3s ease}.ap:hover{background:#722F37;color:#fff;border-color:#722F37;transform:translateY(-2px)}
     .ng{background:linear-gradient(135deg,#722F37,#460d1a)}
+    .nw{background:white}
     .hero-overlay{background:linear-gradient(145deg,rgba(70,13,26,.9) 0%,rgba(114,47,55,.75) 50%,rgba(70,13,26,.85) 100%)}
   </style>
 </head>
@@ -81,6 +82,7 @@
   </div>
 </div>
 
+<!-- HERO -->
 <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
   <img src="https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?w=1920&q=75" alt="Clean carpet" class="absolute inset-0 w-full h-full object-cover" loading="eager">
   <div class="hero-overlay absolute inset-0"></div>
@@ -105,15 +107,92 @@
   </div>
 </section>
 
+<!-- STATS -->
 <section class="bg-nua py-10">
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
-    <div class="reveal text-center"><div class="text-3xl md:text-4xl font-extrabold text-white mb-0.5" data-count="1500">0+</div><div class="text-[10px] uppercase tracking-[.15em] text-wine-300 font-bold">Happy Customers</div></div>
-    <div class="reveal d1 text-center"><div class="text-3xl md:text-4xl font-extrabold text-white mb-0.5" data-count="8">0</div><div class="text-[10px] uppercase tracking-[.15em] text-wine-300 font-bold">Years Experience</div></div>
+    <div class="reveal text-center"><div class="text-3xl md:text-4xl font-extrabold text-white mb-0.5" data-count="72">0</div><div class="text-[10px] uppercase tracking-[.15em] text-wine-300 font-bold">Homes Cleaned</div></div>
+    <div class="reveal d1 text-center"><div class="text-3xl md:text-4xl font-extrabold text-white mb-0.5" data-count="2">0</div><div class="text-[10px] uppercase tracking-[.15em] text-wine-300 font-bold">Years Experience</div></div>
     <div class="reveal d2 text-center"><div class="text-3xl md:text-4xl font-extrabold text-white mb-0.5" data-count="5">0</div><div class="text-[10px] uppercase tracking-[.15em] text-wine-300 font-bold">Counties Covered</div></div>
     <div class="reveal d3 text-center"><div class="text-3xl md:text-4xl font-extrabold text-white mb-0.5">100%</div><div class="text-[10px] uppercase tracking-[.15em] text-wine-300 font-bold">Satisfaction Guarantee</div></div>
   </div>
 </section>
 
+<!-- BEFORE & AFTER (fundo claro agora) -->
+<section id="results" class="py-24 md:py-32 bg-stone-50 relative overflow-hidden">
+  <div class="absolute -bottom-60 -left-60 w-[500px] h-[500px] rounded-full bg-wine-100 blur-[100px] opacity-50"></div>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-xl mx-auto mb-16">
+      <span class="reveal inline-block text-[11px] font-bold uppercase tracking-[.18em] text-nua mb-4">Real Results</span>
+      <h2 class="reveal d1 text-3xl md:text-[42px] font-extrabold tracking-tight leading-[1.08] mb-5">Before & <span class="text-nua">After</span></h2>
+      <p class="reveal d2 text-neutral-400 text-[15px] leading-relaxed">Drag the slider to see the difference.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+
+      <!-- 1 – Living Room Carpet -->
+      <div class="reveal">
+        <div class="slider h-[300px] md:h-[380px]" data-slider>
+          <img class="af" src="https://z-cdn-media.chatglm.cn/files/a481206b-c368-49c0-9816-484402eae9c1.png?auth_key=1886903746-8330da3d55154f94808a18acbe1bb676-0-fe4ba64761c8a7aad0e1cd4157b1cdfb" alt="After carpet" loading="lazy">
+          <div class="bf">
+            <img src="https://z-cdn-media.chatglm.cn/files/32a49ffb-6621-4e3e-8c32-9e15309fa8f7.png?auth_key=1886903746-ef325f22631e444fbe4348616db1fe5c-0-a8566ed2340e8444d6ba1c5ebe6c29c5" alt="Before carpet" loading="lazy">
+          </div>
+          <div class="ln" style="left:50%"></div>
+          <div class="hd" style="left:50%"><span class="iconify text-nua text-lg" data-icon="mdi:arrow-left-right"></span></div>
+          <div class="lb lb-l">Before</div>
+          <div class="lb lb-r">After</div>
+        </div>
+        <p class="text-center text-neutral-400 text-[13px] mt-4 font-bold">Living Room Carpet</p>
+      </div>
+
+      <!-- 2 – Fabric Sofa -->
+      <div class="reveal d1">
+        <div class="slider h-[300px] md:h-[380px]" data-slider>
+          <img class="af" src="https://z-cdn-media.chatglm.cn/files/6abe49aa-1b22-4da5-967c-bf70a29c60bb.png?auth_key=1886903746-a06bf090f6ac46e4b025603ce0fe623d-0-cf3a6af483a7ed4cbdef8220400beb94" alt="After sofa" loading="lazy">
+          <div class="bf">
+            <img src="https://z-cdn-media.chatglm.cn/files/b1315eb4-1ed7-449c-b8e9-b72fc720aade.png?auth_key=1886903746-a892948225634cff9f116017ef3e2fff-0-adb7d4de0778edcc8661b3939c99ab80" alt="Before sofa" loading="lazy">
+          </div>
+          <div class="ln" style="left:50%"></div>
+          <div class="hd" style="left:50%"><span class="iconify text-nua text-lg" data-icon="mdi:arrow-left-right"></span></div>
+          <div class="lb lb-l">Before</div>
+          <div class="lb lb-r">After</div>
+        </div>
+        <p class="text-center text-neutral-400 text-[13px] mt-4 font-bold">Fabric Sofa</p>
+      </div>
+
+      <!-- 3 – Staircase Carpet -->
+      <div class="reveal">
+        <div class="slider h-[300px] md:h-[380px]" data-slider>
+          <img class="af" src="https://z-cdn-media.chatglm.cn/files/e403d375-a164-4c3a-9f97-58326d0b5090.png?auth_key=1886903746-6542e1a9322d40d9b0616fae928277d1-0-4c9adcc868dada53dc6ad92129c5a725" alt="After stairs" loading="lazy">
+          <div class="bf">
+            <img src="https://z-cdn-media.chatglm.cn/files/a9129ab8-2b63-4ee1-83f8-d18db3837f9e.jpeg?auth_key=1886903746-1e0d6a68369e407c85943dcbb7d7c050-0-091bfe470f9d0d59fb83207344714941" alt="Before stairs" loading="lazy">
+          </div>
+          <div class="ln" style="left:50%"></div>
+          <div class="hd" style="left:50%"><span class="iconify text-nua text-lg" data-icon="mdi:arrow-left-right"></span></div>
+          <div class="lb lb-l">Before</div>
+          <div class="lb lb-r">After</div>
+        </div>
+        <p class="text-center text-neutral-400 text-[13px] mt-4 font-bold">Staircase Carpet</p>
+      </div>
+
+      <!-- 4 – Mattress -->
+      <div class="reveal d1">
+        <div class="slider h-[300px] md:h-[380px]" data-slider>
+          <img class="af" src="https://z-cdn-media.chatglm.cn/files/554c4c90-0430-4979-8400-37132256768d.png?auth_key=1886903746-b3ca57dd1a164e82a29733d04a4ea6d4-0-8c553642ce2a57ef06107cc24d571e1f" alt="After mattress" loading="lazy">
+          <div class="bf">
+            <img src="https://z-cdn-media.chatglm.cn/files/ea983854-a271-4d3a-a103-1117c7229b58.png?auth_key=1886903746-e35c5820cae742b4b7f0193922f93e84-0-1d96a3c286bba0b5f7a92acd91a1d0e1" alt="Before mattress" loading="lazy">
+          </div>
+          <div class="ln" style="left:50%"></div>
+          <div class="hd" style="left:50%"><span class="iconify text-nua text-lg" data-icon="mdi:arrow-left-right"></span></div>
+          <div class="lb lb-l">Before</div>
+          <div class="lb lb-r">After</div>
+        </div>
+        <p class="text-center text-neutral-400 text-[13px] mt-4 font-bold">Mattress</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
 <section id="about" class="py-24 md:py-32 bg-white relative overflow-hidden">
   <div class="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-wine-100 blur-[100px] opacity-60"></div>
   <div class="max-w-7xl mx-auto px-6">
@@ -141,6 +220,7 @@
   </div>
 </section>
 
+<!-- SERVICES -->
 <section id="services" class="py-24 md:py-32 bg-stone-50 relative overflow-hidden">
   <div class="absolute -bottom-60 -right-60 w-[500px] h-[500px] rounded-full bg-wine-100 blur-[100px] opacity-50"></div>
   <div class="max-w-7xl mx-auto px-6">
@@ -163,96 +243,25 @@
   </div>
 </section>
 
-<section class="py-24 md:py-32 bg-white">
-  <div class="max-w-7xl mx-auto px-6">
+<!-- HOW IT WORKS (fundo escuro agora) -->
+<section class="py-24 md:py-32 bg-nua relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-[400px] h-[400px] rounded-full bg-wine-400 blur-[100px] opacity-[.06]"></div>
+  <div class="absolute bottom-0 right-0 w-[300px] h-[300px] rounded-full bg-wine-300 blur-[100px] opacity-[.04]"></div>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
     <div class="text-center max-w-xl mx-auto mb-16">
-      <span class="reveal inline-block text-[11px] font-bold uppercase tracking-[.18em] text-nua mb-4">How It Works</span>
-      <h2 class="reveal d1 text-3xl md:text-[42px] font-extrabold tracking-tight leading-[1.08]">Simple as <span class="text-nua">1, 2, 3, 4</span></h2>
+      <span class="reveal inline-block text-[11px] font-bold uppercase tracking-[.18em] text-wine-300 mb-4">How It Works</span>
+      <h2 class="reveal d1 text-3xl md:text-[42px] font-extrabold tracking-tight leading-[1.08] text-white">Simple as <span class="text-wine-300">1, 2, 3, 4</span></h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="reveal text-center relative"><div class="w-14 h-14 rounded-2xl ng text-white flex items-center justify-center mx-auto mb-5 text-xl font-extrabold hover:scale-110 transition-transform">1</div><h3 class="font-bold text-[15px] mb-1.5">Get in Touch</h3><p class="text-[13px] text-neutral-400 leading-relaxed">Call, message or fill in our form.</p><div class="hidden lg:block absolute top-7 left-[60%] w-[80%] border-t-2 border-dashed border-nua/15"></div></div>
-      <div class="reveal d1 text-center relative"><div class="w-14 h-14 rounded-2xl ng text-white flex items-center justify-center mx-auto mb-5 text-xl font-extrabold hover:scale-110 transition-transform">2</div><h3 class="font-bold text-[15px] mb-1.5">Free Quote</h3><p class="text-[13px] text-neutral-400 leading-relaxed">Transparent, no-obligation quote.</p><div class="hidden lg:block absolute top-7 left-[60%] w-[80%] border-t-2 border-dashed border-nua/15"></div></div>
-      <div class="reveal d2 text-center relative"><div class="w-14 h-14 rounded-2xl ng text-white flex items-center justify-center mx-auto mb-5 text-xl font-extrabold hover:scale-110 transition-transform">3</div><h3 class="font-bold text-[15px] mb-1.5">We Clean</h3><p class="text-[13px] text-neutral-400 leading-relaxed">On time, with pro equipment.</p><div class="hidden lg:block absolute top-7 left-[60%] w-[80%] border-t-2 border-dashed border-nua/15"></div></div>
-      <div class="reveal d3 text-center"><div class="w-14 h-14 rounded-2xl ng text-white flex items-center justify-center mx-auto mb-5 text-xl font-extrabold hover:scale-110 transition-transform">4</div><h3 class="font-bold text-[15px] mb-1.5">Enjoy!</h3><p class="text-[13px] text-neutral-400 leading-relaxed">Fresh, clean, great-smelling home.</p></div>
+      <div class="reveal text-center relative"><div class="w-14 h-14 rounded-2xl nw text-nua flex items-center justify-center mx-auto mb-5 text-xl font-extrabold hover:scale-110 transition-transform shadow-lg">1</div><h3 class="font-bold text-[15px] mb-1.5 text-white">Get in Touch</h3><p class="text-[13px] text-white/40 leading-relaxed">Call, message or fill in our form.</p><div class="hidden lg:block absolute top-7 left-[60%] w-[80%] border-t-2 border-dashed border-white/10"></div></div>
+      <div class="reveal d1 text-center relative"><div class="w-14 h-14 rounded-2xl nw text-nua flex items-center justify-center mx-auto mb-5 text-xl font-extrabold hover:scale-110 transition-transform shadow-lg">2</div><h3 class="font-bold text-[15px] mb-1.5 text-white">Free Quote</h3><p class="text-[13px] text-white/40 leading-relaxed">Transparent, no-obligation quote.</p><div class="hidden lg:block absolute top-7 left-[60%] w-[80%] border-t-2 border-dashed border-white/10"></div></div>
+      <div class="reveal d2 text-center relative"><div class="w-14 h-14 rounded-2xl nw text-nua flex items-center justify-center mx-auto mb-5 text-xl font-extrabold hover:scale-110 transition-transform shadow-lg">3</div><h3 class="font-bold text-[15px] mb-1.5 text-white">We Clean</h3><p class="text-[13px] text-white/40 leading-relaxed">On time, with pro equipment.</p><div class="hidden lg:block absolute top-7 left-[60%] w-[80%] border-t-2 border-dashed border-white/10"></div></div>
+      <div class="reveal d3 text-center"><div class="w-14 h-14 rounded-2xl nw text-nua flex items-center justify-center mx-auto mb-5 text-xl font-extrabold hover:scale-110 transition-transform shadow-lg">4</div><h3 class="font-bold text-[15px] mb-1.5 text-white">Enjoy!</h3><p class="text-[13px] text-white/40 leading-relaxed">Fresh, clean, great-smelling home.</p></div>
     </div>
   </div>
 </section>
 
-<!-- BEFORE & AFTER com <img> e loading="lazy" -->
-<section id="results" class="py-24 md:py-32 bg-nua relative overflow-hidden">
-  <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-wine-400 blur-[100px] opacity-[.06]"></div>
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center max-w-xl mx-auto mb-16">
-      <span class="reveal inline-block text-[11px] font-bold uppercase tracking-[.18em] text-wine-300 mb-4">Real Results</span>
-      <h2 class="reveal d1 text-3xl md:text-[42px] font-extrabold tracking-tight leading-[1.08] text-white mb-5">Before & <span class="text-wine-300">After</span></h2>
-      <p class="reveal d2 text-white/45 text-[15px] leading-relaxed">Drag the slider to see the difference.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
-
-      <!-- 1 – Living Room Carpet -->
-      <div class="reveal">
-        <div class="slider h-[300px] md:h-[380px]" data-slider>
-          <img class="af" src="https://z-cdn-media.chatglm.cn/files/a481206b-c368-49c0-9816-484402eae9c1.png?auth_key=1886903746-8330da3d55154f94808a18acbe1bb676-0-fe4ba64761c8a7aad0e1cd4157b1cdfb" alt="After carpet" loading="lazy">
-          <div class="bf">
-            <img src="https://z-cdn-media.chatglm.cn/files/32a49ffb-6621-4e3e-8c32-9e15309fa8f7.png?auth_key=1886903746-ef325f22631e444fbe4348616db1fe5c-0-a8566ed2340e8444d6ba1c5ebe6c29c5" alt="Before carpet" loading="lazy">
-          </div>
-          <div class="ln" style="left:50%"></div>
-          <div class="hd" style="left:50%"><span class="iconify text-nua text-lg" data-icon="mdi:arrow-left-right"></span></div>
-          <div class="lb lb-l">Before</div>
-          <div class="lb lb-r">After</div>
-        </div>
-        <p class="text-center text-white/35 text-[13px] mt-4 font-bold">Living Room Carpet</p>
-      </div>
-
-      <!-- 2 – Fabric Sofa -->
-      <div class="reveal d1">
-        <div class="slider h-[300px] md:h-[380px]" data-slider>
-          <img class="af" src="https://z-cdn-media.chatglm.cn/files/6abe49aa-1b22-4da5-967c-bf70a29c60bb.png?auth_key=1886903746-a06bf090f6ac46e4b025603ce0fe623d-0-cf3a6af483a7ed4cbdef8220400beb94" alt="After sofa" loading="lazy">
-          <div class="bf">
-            <img src="https://z-cdn-media.chatglm.cn/files/b1315eb4-1ed7-449c-b8e9-b72fc720aade.png?auth_key=1886903746-a892948225634cff9f116017ef3e2fff-0-adb7d4de0778edcc8661b3939c99ab80" alt="Before sofa" loading="lazy">
-          </div>
-          <div class="ln" style="left:50%"></div>
-          <div class="hd" style="left:50%"><span class="iconify text-nua text-lg" data-icon="mdi:arrow-left-right"></span></div>
-          <div class="lb lb-l">Before</div>
-          <div class="lb lb-r">After</div>
-        </div>
-        <p class="text-center text-white/35 text-[13px] mt-4 font-bold">Fabric Sofa</p>
-      </div>
-
-      <!-- 3 – Staircase Carpet -->
-      <div class="reveal">
-        <div class="slider h-[300px] md:h-[380px]" data-slider>
-          <img class="af" src="https://z-cdn-media.chatglm.cn/files/e403d375-a164-4c3a-9f97-58326d0b5090.png?auth_key=1886903746-6542e1a9322d40d9b0616fae928277d1-0-4c9adcc868dada53dc6ad92129c5a725" alt="After stairs" loading="lazy">
-          <div class="bf">
-            <img src="https://z-cdn-media.chatglm.cn/files/a9129ab8-2b63-4ee1-83f8-d18db3837f9e.jpeg?auth_key=1886903746-1e0d6a68369e407c85943dcbb7d7c050-0-091bfe470f9d0d59fb83207344714941" alt="Before stairs" loading="lazy">
-          </div>
-          <div class="ln" style="left:50%"></div>
-          <div class="hd" style="left:50%"><span class="iconify text-nua text-lg" data-icon="mdi:arrow-left-right"></span></div>
-          <div class="lb lb-l">Before</div>
-          <div class="lb lb-r">After</div>
-        </div>
-        <p class="text-center text-white/35 text-[13px] mt-4 font-bold">Staircase Carpet</p>
-      </div>
-
-      <!-- 4 – Mattress -->
-      <div class="reveal d1">
-        <div class="slider h-[300px] md:h-[380px]" data-slider>
-          <img class="af" src="https://z-cdn-media.chatglm.cn/files/554c4c90-0430-4979-8400-37132256768d.png?auth_key=1886903746-b3ca57dd1a164e82a29733d04a4ea6d4-0-8c553642ce2a57ef06107cc24d571e1f" alt="After mattress" loading="lazy">
-          <div class="bf">
-            <img src="https://z-cdn-media.chatglm.cn/files/ea983854-a271-4d3a-a103-1117c7229b58.png?auth_key=1886903746-e35c5820cae742b4b7f0193922f93e84-0-1d96a3c286bba0b5f7a92acd91a1d0e1" alt="Before mattress" loading="lazy">
-          </div>
-          <div class="ln" style="left:50%"></div>
-          <div class="hd" style="left:50%"><span class="iconify text-nua text-lg" data-icon="mdi:arrow-left-right"></span></div>
-          <div class="lb lb-l">Before</div>
-          <div class="lb lb-r">After</div>
-        </div>
-        <p class="text-center text-white/35 text-[13px] mt-4 font-bold">Mattress</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+<!-- AREAS -->
 <section id="areas" class="py-24 md:py-32 bg-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -273,8 +282,9 @@
         </div>
       </div>
       <div class="reveal d2">
-        <div class="rounded-2xl overflow-hidden shadow-2xl shadow-nua/10 h-[400px] md:h-[500px] relative bg-gradient-to-br from-wine-100 via-wine-50 to-white">
-          <div class="absolute inset-0 bg-gradient-to-t from-nua/50 via-transparent to-transparent"></div>
+        <div class="rounded-2xl overflow-hidden shadow-2xl shadow-nua/10 h-[400px] md:h-[500px] relative">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=75" alt="Residential homes" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-nua/70 via-nua/20 to-transparent"></div>
           <div class="absolute bottom-6 left-6 right-6"><div class="bg-white/95 backdrop-blur-md rounded-xl p-5 shadow-lg"><div class="flex items-center gap-3 mb-2"><span class="iconify text-nua text-xl" data-icon="mdi:home-city-outline"></span><span class="font-bold text-sm">Residential & Commercial</span></div><p class="text-[12px] text-neutral-400">From single rooms to entire buildings — no job too big or small.</p></div></div>
         </div>
       </div>
@@ -282,6 +292,7 @@
   </div>
 </section>
 
+<!-- REVIEWS -->
 <section id="reviews" class="py-24 md:py-32 bg-stone-50">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center max-w-xl mx-auto mb-16">
@@ -296,6 +307,7 @@
   </div>
 </section>
 
+<!-- CTA -->
 <section class="py-24 md:py-32 ng relative overflow-hidden">
   <div class="absolute inset-0 opacity-[.05]"><div class="absolute top-0 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div></div>
   <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
@@ -310,6 +322,7 @@
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="py-24 md:py-32 bg-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
